@@ -8,7 +8,22 @@
 
 // v-1 (подсчет значений)
 const arrayForCheck = ["a", "e", "i", "o", "u", "y"];
-const countVowel = (str) => str.toLowerCase().split("").reduce((accumulator, currentValue) => arrayForCheck.includes(currentValue) ?  accumulator + 1 :  accumulator, 0);
+/**
+ * 
+ * @param {string} str 
+ * @param {string} separator 
+ * @param {array} arrayСheck 
+ * @returns {number} 
+ */
+const countVowel = (str, separator = "", arrayСheck = arrayForCheck) =>
+  str
+    .toLowerCase()
+    .split(separator)
+    .reduce(
+      (accumulator, currentValue) =>
+        arrayСheck.includes(currentValue) ? accumulator + 1 : accumulator,
+      0
+    );
 
 console.log(countVowel("console"));
 console.log(countVowel("www"));
@@ -16,11 +31,19 @@ console.log(countVowel("oOo!"));
 console.log(countVowel("QwertY"));
 
 // v-2 (подсчет длинны)
-const arrayForCheck2 = ['a', 'e', 'i' , 'o', 'u', 'y']
-const countVowel2 = (str) => str
+const arrayForCheck2 = ['a', 'e', 'i', 'o', 'u', 'y']
+/**
+ * 
+ * @param {string} str 
+ * @param {string} separator 
+ * @param {array} arrayСheck 
+ * @returns {number} 
+ */
+const countVowel2 = (str, separator = "", arrayСheck = arrayForCheck2) =>
+  str
     .toLowerCase()
-    .split("")
-    .filter((element) => arrayForCheck2.includes(element)).length;
+    .split(separator)
+    .filter((element) => arrayСheck.includes(element)).length;
 
 console.log(countVowel2("console"));
 console.log(countVowel2("www"));
